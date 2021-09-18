@@ -131,13 +131,32 @@ We have pickle files in our dataset i.e volumetric data of scan, each pickle fil
 
 
 <br>
+
+
+## Experimentation
+
+1. Mask-Rcnn
+2. Yolo
+3. Unet
+
 <br>
 
-<h2 style="text-align:center">MRCNN Training</h2>
-
-In MRCNN Training you will find trainig of MRI-Scans on MRCNN
 
 
-Notbook to train MRCNN = [Link to Notebook](mrcnn_training/Train.ipynb)
+## Evaluation matrix:
+
+1. Jacard
+2. Dice
+3. IOU
+
+<br>
+
+## Averages
+![scan1](extras/average_matrics.png)
+
+## Line Plot of 10 Images
+![scan1](extras/line_plot.png)
 
 
+## Bar plot of evalutaion matrics
+![scan1](extras/bar_chart_evaluation.png)

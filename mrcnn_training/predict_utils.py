@@ -98,38 +98,9 @@ def predict(model, image_path, labels, max_score = 0.9):
     
     
     
-    people_masks =[]
-    zebra_crossing_mask = []
-    
-    
-    for index, i in enumerate(np.asarray(class_ids)):
-        if classes[i] == "person":
-            people_masks.append(r['masks'][:,:,index])
-            
-        if classes[i] == "zebracrossing":
-            zebra_crossing_mask.append(r['masks'][:,:,index])
-    
-    
-    zebra_crossing_mask = np.asarray(zebra_crossing_mask)
-    people_masks = np.asarray(people_masks)
-
-    
-    
-    count = 0
-    for p1 in zebra_crossing_mask:
-        for p2 in people_masks:
-            c = np.logical_and(p1, p2)
-            if c.sum() == 0:
-                count +=1
-            else:
-                count = 0
-    
-
-        
-    
     out = display_instances(image,r['rois'],r['masks'],r['class_ids'],classes,r['scores'])
 
-    return out, r, count
+    return out, r
 
 
 
